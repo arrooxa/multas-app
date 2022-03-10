@@ -9,13 +9,23 @@ function initialState() {
   return { user: "", password: "" };
 }
 
-function login({user, password}){
-  if(user === "admin" && password === "admin"){
-    return{token: '1234'};
+async function login({user, password}){
+
+  const response = await fetch("https://my-json-server.typicode.com/cidadealta/exercise/usuarios");
+
+  const data = await response.json();
+  
+  const userArray = Object.values(data).filter((item) => item['nome'] === user);
+  
+  if(userArray.length !== 0){
+    if(userArray[0].senha === password){
+      return {token: '1234'};
+    }
   }
 
   return {error: 'Usuário ou senha inválido'};
-}
+
+  }
 
 const UserLogin = () => {
   const [values, setValues] = useState(initialState);
@@ -32,10 +42,10 @@ const UserLogin = () => {
     }); 
   }
 
-  function onSubmit(event) {
+  async function onSubmit(event) {
     event.preventDefault();
 
-    const { token, error } = login(values);
+    const { token, error } = await login(values);
 
     if(token){
       setToken(token);
