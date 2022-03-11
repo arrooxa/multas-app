@@ -11,6 +11,14 @@ export const TitleHomepage = styled.h1`
   letter-spacing: 0.3em;
 `;
 
+export const AddButton = styled.button`
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+`
+
 export const CrimeContainer = styled.div`
   background: #f9b036;
   border-radius: 10px;
