@@ -19,12 +19,11 @@ async function login({user, password}){
   
   if(userArray.length !== 0){
     if(userArray[0].senha === password){
-      return {token: '1234'};
+      return {token: true};
     }
   }
 
   return {error: 'Usuário ou senha inválido'};
-
   }
 
 const UserLogin = () => {
@@ -49,10 +48,11 @@ const UserLogin = () => {
 
     if(token){
       setToken(token);
-      return history.push('/');
+      return history.push('/home');
     }
 
     setValues(initialState);
+    setError(error);
   }
 
   return (
