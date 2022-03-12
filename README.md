@@ -1,6 +1,7 @@
 ## Código Penal de Multas do Cidade Alta!
 Projeto em React feito com a finalidade de aprender ContextAPI, Styled-Components, gerenciamentos de APIs e algumas tecnologias avançadas de React.
 
+![alt text](https://mir-s3-cdn-cf.behance.net/project_modules/fs/e75ab292133855.5e43970f7bc8d.png)
 
 ## Tecnologias usadas 
   
