@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import StoreContext from "components/Store/Context";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import UIButton from "components/UI/Button/Button";
 
 import "./Login.css";
@@ -9,22 +9,21 @@ function initialState() {
   return { user: "", password: "" };
 }
 
-async function login({user, password}){
-
-  const response = await fetch("https://my-json-server.typicode.com/cidadealta/exercise/usuarios");
+async function login({ user, password }) {
+  const response = await fetch("http://localhost:3000/usuarios");
 
   const data = await response.json();
-  
-  const userArray = Object.values(data).filter((item) => item['nome'] === user);
-  
-  if(userArray.length !== 0){
-    if(userArray[0].senha === password){
-      return {token: true};
+
+  const userArray = Object.values(data).filter((item) => item["nome"] === user);
+
+  if (userArray.length !== 0) {
+    if (userArray[0].senha === password) {
+      return { token: true };
     }
   }
 
-  return {error: 'Usuário ou senha inválido'};
-  }
+  return { error: "Usuário ou senha inválido" };
+}
 
 const UserLogin = () => {
   const [values, setValues] = useState(initialState);
@@ -38,7 +37,7 @@ const UserLogin = () => {
     setValues({
       ...values,
       [name]: value,
-    }); 
+    });
   }
 
   async function onSubmit(event) {
@@ -46,9 +45,9 @@ const UserLogin = () => {
 
     const { token, error } = await login(values);
 
-    if(token){
+    if (token) {
       setToken(token);
-      return history.push('/home');
+      return history.push("/home");
     }
 
     setValues(initialState);
@@ -79,9 +78,7 @@ const UserLogin = () => {
             value={values.password}
           />
         </div>
-        {error && (
-          <div className="user-login__error">{error}</div>
-        )}
+        {error && <div className="user-login__error">{error}</div>}
         <UIButton
           type="submit"
           theme="contained-green"
