@@ -41,12 +41,3 @@ ou
 ```javascript
 npm start
 ```
-
-
-
-## Tecnologias usadas 
-  
-* React Native
-* Styled Components
-* react-native-sound
- 
