@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import AddData from "../AddData/AddData";
 import EditData from "../EditData/EditData";
-import View from "../View/View";
-import Sure from "../Sure/Sure";
+import ViewData from "../ViewData/ViewData";
+import RemoveData from "../RemoveData/RemoveData";
 import {
   TitleHomepage,
   Container,
@@ -26,7 +26,7 @@ const Content = () => {
   const [buttonBool, setButtonBool] = useState({
     Add: false,
     Edit: false,
-    Sure: false,
+    Remove: false,
     View: false,
   });
 
@@ -121,7 +121,7 @@ const Content = () => {
             <RemoveButton
               onClick={() => {
                 setSelectedID(item["id"]);
-                handlePopups("Sure", true);
+                handlePopups("Remove", true);
               }}
             >
               Remover
@@ -146,14 +146,14 @@ const Content = () => {
         );
       })}
 
-      <View
+      <ViewData
         trigger={buttonBool.View}
         setTrigger={handlePopups}
         selectedID={selectedID}
       />
       
-      <Sure
-        trigger={buttonBool.Sure}
+      <RemoveData
+        trigger={buttonBool.Remove}
         setTrigger={handlePopups}
         remove={removeFetching}
         selectedID={selectedID}

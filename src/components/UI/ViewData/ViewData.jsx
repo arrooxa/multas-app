@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Popup, InnerPopup, CloseButton, Name } from "./styles";
 
-const View = ({ trigger, setTrigger }) => {
+const ViewData = ({ trigger, setTrigger }) => {
 
   return trigger ? (
     <Popup>
@@ -20,4 +20,4 @@ const View = ({ trigger, setTrigger }) => {
   );
 };
 
-export default View;
+export default ViewData;

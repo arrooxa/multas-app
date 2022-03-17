@@ -7,13 +7,13 @@ import {
   DefinitionText,
 } from "./styles";
 
-const Sure = ({ trigger, setTrigger, remove, selectedID }) => {
+const RemoveData = ({ trigger, setTrigger, remove, selectedID }) => {
   return trigger ? (
     <Popup>
       <InnerPopup>
         <CloseButton
           onClick={() => {
-            setTrigger("Sure", false);
+            setTrigger("Remove", false);
           }}
         >
           Fechar
@@ -22,12 +22,12 @@ const Sure = ({ trigger, setTrigger, remove, selectedID }) => {
         <DefinitonButton
           onClick={() => {
             remove(selectedID);
-            setTrigger("Sure", false);
+            setTrigger("Remove", false);
           }}
         >
           Sim
         </DefinitonButton>
-        <DefinitonButton onClick={() => setTrigger("Sure", false)}>
+        <DefinitonButton onClick={() => setTrigger("Remove", false)}>
           Não
         </DefinitonButton>
       </InnerPopup>
@@ -37,4 +37,4 @@ const Sure = ({ trigger, setTrigger, remove, selectedID }) => {
   );
 };
 
-export default Sure;
+export default RemoveData;

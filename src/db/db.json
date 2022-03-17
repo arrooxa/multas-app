@@ -26,14 +26,6 @@
       "multa": 0,
       "tempoPrisao": 90,
       "status": 2
-    },
-    {
-      "id": 4,
-      "nome": "teste",
-      "descricao": "teste",
-      "multa": "123",
-      "tempoPrisao": "123",
-      "dataCriacao": "2022-03-17T11:02:46.161Z"
     }
   ],
   "status": [
