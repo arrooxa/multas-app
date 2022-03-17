@@ -22,7 +22,7 @@ npm install
 ```
 
 ```javascript
-cd src/db --watch db.json
+cd src/db && json-server --watch db.json
 ```
 
 ```javascript
