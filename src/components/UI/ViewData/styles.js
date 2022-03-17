@@ -27,14 +27,10 @@ export const CloseButton = styled.button`
   right: 16px;
 `;
 
-export const Name = styled.h2`
-`
+export const Name = styled.h2``;
 
-export const Description = styled.p`
-`
+export const Description = styled.p``;
 
-export const Status = styled.p`
-`
+export const Status = styled.p``;
 
-export const Ticket = styled.p`
-`
+export const Ticket = styled.p``;

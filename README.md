@@ -1,15 +1,15 @@
 ## Código Penal de Multas do Cidade Alta!
+
 Projeto em React feito com a finalidade de aprender ContextAPI, Styled-Components, gerenciamentos de APIs e algumas tecnologias avançadas de React.
 
 ![alt text](https://mir-s3-cdn-cf.behance.net/project_modules/fs/e75ab292133855.5e43970f7bc8d.png)
 
-## Tecnologias usadas 
-  
-* React
-* Styled Components
-* json-server
-* react-hook-form
+## Tecnologias usadas
 
+- React
+- Styled Components
+- json-server
+- react-hook-form
 
 ## Instalação
 
@@ -29,15 +29,13 @@ cd src/db && json-server --watch db.json
 yarn start
 ```
 
-
-
 Depois da primeira instalação para jogar é só executar:
 
 ```javascript
 yarn start
 ```
 
-ou 
+ou
 
 ```javascript
 npm start

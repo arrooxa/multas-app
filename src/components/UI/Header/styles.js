@@ -18,4 +18,3 @@ export const ButtonLeave = styled.button`
   border-radius: 10%;
   height: 30px;
 `;
-

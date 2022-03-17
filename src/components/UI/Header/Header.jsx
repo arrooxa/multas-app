@@ -16,7 +16,9 @@ const Header = () => {
   return (
     <Container>
       <Logo />
-      <ButtonLeave onClick={onClick} tipo={`submit`}>Sair</ButtonLeave>
+      <ButtonLeave onClick={onClick} tipo={`submit`}>
+        Sair
+      </ButtonLeave>
     </Container>
   );
 };

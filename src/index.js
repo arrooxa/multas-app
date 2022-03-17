@@ -1,6 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Root from './pages/Root';
+import React from "react";
+import ReactDOM from "react-dom";
+import Root from "./pages/Root";
 
-ReactDOM.render(<Root />, document.getElementById('root'));
-
+ReactDOM.render(<Root />, document.getElementById("root"));

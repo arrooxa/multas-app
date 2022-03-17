@@ -13,7 +13,7 @@ import {
   AddButton,
   EditButton,
   RemoveButton,
-  ViewButton
+  ViewButton,
 } from "./styles";
 
 const Content = () => {
@@ -42,9 +42,11 @@ const Content = () => {
 
     const data = await response.json();
 
-    const LastIDFetched = data.reduce((prev, current) => prev.id > current.id ? prev.id : current.id);
+    const LastIDFetched = data.reduce((prev, current) =>
+      prev.id > current.id ? prev.id : current.id
+    );
 
-    setLastIDAPI(LastIDFetched)
+    setLastIDAPI(LastIDFetched);
 
     setCriminalArray(data);
   }
@@ -77,7 +79,7 @@ const Content = () => {
         Accept: "application/json",
         "Content-type": "application/json",
       },
-      body: JSON.stringify({id: LastIDAPI + 1, ...data})
+      body: JSON.stringify({ id: LastIDAPI + 1, ...data }),
     });
 
     getFetching();
@@ -151,7 +153,7 @@ const Content = () => {
         setTrigger={handlePopups}
         selectedID={selectedID}
       />
-      
+
       <RemoveData
         trigger={buttonBool.Remove}
         setTrigger={handlePopups}

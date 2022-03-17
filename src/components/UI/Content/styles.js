@@ -17,19 +17,13 @@ export const AddButton = styled.button`
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-`
+`;
 
-export const EditButton = styled.button`
+export const EditButton = styled.button``;
 
-`
+export const RemoveButton = styled.button``;
 
-export const RemoveButton = styled.button`
-
-`
-
-export const ViewButton = styled.button`
-
-`
+export const ViewButton = styled.button``;
 
 export const CrimeContainer = styled.div`
   background: #f9b036;

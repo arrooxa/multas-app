@@ -19,19 +19,18 @@
 
 .ui-button--bordered-green {
   padding: 7px 10px;
-  border-color: #1DD1A1;
-  color: #1DD1A1;
+  border-color: #1dd1a1;
+  color: #1dd1a1;
   border: 2px solid;
 }
 
 .ui-button--bordered-green:hover {
-  background-color: #1DD1A1;
+  background-color: #1dd1a1;
   color: #fff;
 }
 
-
 .ui-button--contained-green {
-  background-color: #1DD1A1;
+  background-color: #1dd1a1;
   color: #fff;
 }
 
