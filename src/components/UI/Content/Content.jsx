@@ -21,6 +21,8 @@ const Content = () => {
 
   const [selectedID, setSelectedID] = useState(null);
 
+  const [LastIDAPI, setLastIDAPI] = useState(null);
+
   const [buttonBool, setButtonBool] = useState({
     Add: false,
     Edit: false,
@@ -35,18 +37,14 @@ const Content = () => {
     }));
   }
 
-  async function fetching(id) {
-    const response = await fetch(`http://localhost:3000/codigopenal/${id}`);
-  
-    const data = response.json();
-  
-    return data;
-  }
-
   async function getFetching() {
     const response = await fetch("http://localhost:3000/codigopenal");
 
     const data = await response.json();
+
+    const LastIDFetched = data.reduce((prev, current) => prev.id > current.id ? prev.id : current.id);
+
+    setLastIDAPI(LastIDFetched)
 
     setCriminalArray(data);
   }
@@ -79,7 +77,7 @@ const Content = () => {
         Accept: "application/json",
         "Content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({id: LastIDAPI + 1, ...data})
     });
 
     getFetching();

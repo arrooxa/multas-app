@@ -3,18 +3,6 @@ import { Popup, InnerPopup, CloseButton } from "./styles";
 import { useForm } from "react-hook-form";
 
 const EditData = ({ trigger, setTrigger, selectedID, put }) => {
-  const [arrayFetch, setArrayFetch] = useState([]);
-
-  useEffect(() => getLaws(), []);
-
-  function getLaws() {
-    fetch("http://localhost:3000/codigopenal")
-      .then((result) => result.json())
-      .then((resp) => {
-        setArrayFetch(resp);
-      });
-  }
-
   const { register, handleSubmit, errors } = useForm();
 
   async function onSubmit(data) {

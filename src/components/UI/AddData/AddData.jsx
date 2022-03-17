@@ -24,11 +24,11 @@ const AddData = ({ post, trigger, setTrigger }) => {
           Fechar
         </CloseButton>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input
+          {/* <input
             type="number"
             placeholder="ID"
             {...register("id", { required: true })}
-          />
+          /> */}
           <input
             type="text"
             placeholder="Nome"
