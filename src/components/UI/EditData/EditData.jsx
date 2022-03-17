@@ -2,9 +2,22 @@ import React, { useEffect, useState } from "react";
 import { Popup, InnerPopup, CloseButton } from "./styles";
 import { useForm } from "react-hook-form";
 
-const EditData = ({ trigger, setTrigger, selectedID, put }) => {
-  const { register, handleSubmit, errors } = useForm();
+async function fetching(id){
+  const response = await fetch("http://localhost:3000/codigopenal");
 
+  const data = await response.json();
+
+  return data[id-1];
+}
+
+const EditData = ({ trigger, setTrigger, selectedID, put, preloadedData }) => {
+
+  useEffect(() => {console.log(preloadedData)}, [preloadedData])
+
+  const { register, handleSubmit, errors } = useForm({
+    defaultValues: preloadedData,
+  });
+  
   async function onSubmit(data) {
     put(data, selectedID);
     setTrigger('Edit', false);
@@ -22,28 +35,23 @@ const EditData = ({ trigger, setTrigger, selectedID, put }) => {
         </CloseButton>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
-            type="number"
-            placeholder="ID"
-            {...register("id")}
-          />
-          <input
             type="text"
-            placeholder="Nome"
+            name="nome"
             {...register("nome")}
           />
           <input
             type="text"
-            placeholder="Descrição"
+            name="descricao"
             {...register("descricao")}
           />
           <input
             type="number"
-            placeholder="Multa"
+            name="multa"
             {...register("multa")}
           />
           <input
             type="number"
-            placeholder="Tempo de Prisão"
+            name="tempoPrisao"
             {...register("tempoPrisao")}
           />
           <input type="submit" />

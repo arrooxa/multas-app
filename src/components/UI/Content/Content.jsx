@@ -19,6 +19,8 @@ import {
 const Content = () => {
   const [criminalArray, setCriminalArray] = useState([]);
 
+  const [selectedArray, setSelectedArray] = useState(null);
+
   const [selectedID, setSelectedID] = useState(null);
 
   const [LastIDAPI, setLastIDAPI] = useState(null);
@@ -29,6 +31,26 @@ const Content = () => {
     Remove: false,
     View: false,
   });
+
+  useEffect(() => {
+    const fetching = async (id) => {
+      const fetched = id === null ? await fetch (`http://localhost:3000/codigopenal`) : await fetch(`http://localhost:3000/codigopenal/${selectedID}`);
+
+      const result = await fetched.json();
+
+      if(id !== null){
+      setSelectedArray({
+        nome: result['nome'],
+        descricao: result['descricao'],
+        multa: result['multa'],
+        tempoPrisao: result['tempoPrisao']
+      })
+    }}
+
+    fetching(selectedID);
+  }, [selectedID]);
+
+  useEffect(() => console.log(selectedArray), [selectedArray]);
 
   function handlePopups(popup, bool) {
     setButtonBool((oldObj) => ({
@@ -166,6 +188,7 @@ const Content = () => {
         setTrigger={handlePopups}
         put={patchFetching}
         selectedID={selectedID}
+        preloadedData={selectedArray}
       />
     </Container>
   );
